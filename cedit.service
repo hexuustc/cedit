@@ -1,0 +1,14 @@
+[Unit]
+Description=Fpgaol Cedit Server Service
+After=network.target
+
+[Service]
+Type=simple
+User=fpgaol2
+WorkingDirectory=/home/fpgaol2/cedit
+Restart=on-failure
+RestartSec=5s
+ExecStart=/usr/bin/python3 /home/fpgaol2/cedit/cedit.py
+
+[Install]
+WantedBy=multi-user.target
